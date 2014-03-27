@@ -44,12 +44,12 @@ public class HitTracker {
 
 	@PostConstruct
 	void initialize() {
-		String host = System.getenv("OPENSHIFT_MONGODB_DB_HOST");
-		String user = System.getenv("OPENSHIFT_MONGODB_DB_USERNAME");
-		String password = System.getenv("OPENSHIFT_MONGODB_DB_PASSWORD");
-		int port = Integer.decode(System.getenv("OPENSHIFT_MONGODB_DB_PORT"));
-		gearId = System.getenv("OPENSHIFT_GEAR_UUID");
-		appName = System.getenv("OPENSHIFT_APP_NAME");
+		String host = System.getenv("MONGO_PORT_27017_TCP_ADDR");
+		int port = Integer.decode(System.getenv("MONGO_PORT_27017_TCP_PORT"));
+		String user = null;
+		String password = null;
+		gearId = System.getenv("HOSTNAME");
+		appName = "scaling-demo";
 
 		LOGGER.fine("Connecting with host = " + host + " / port = " + port);
 
@@ -58,7 +58,7 @@ public class HitTracker {
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-		mongoDB = mongo.getDB(System.getenv("OPENSHIFT_APP_NAME"));
+		mongoDB = mongo.getDB(appName);
 		if (user != null && password != null) {
 			if (mongoDB.authenticate(user, password.toCharArray()) == false) {
 				throw new RuntimeException("Mongo authentication failed");
