@@ -97,13 +97,12 @@ public class HitTracker {
 					}
 
 					String id = ((ObjectId) result.get("_id")).toString();
-					Date timestamp = new Date(
-							((Long) result.get("time")).longValue());
+					Long timestamp = (Long) result.get("time");
 					Integer hits = (Integer) result.get("hits");
 
 					// Add the hits and timestamp to the gear
 					gear.getChildren().add(
-							new Hit(id, timestamp, hits.intValue()));
+							new Hit(id, timestamp.longValue(), hits.intValue()));
 				}
 			} finally {
 				cur.close();
