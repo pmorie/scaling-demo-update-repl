@@ -5,21 +5,21 @@ import java.util.Date;
 public class Hit {
 	String id;
 	final String type = "hit";
-	Date timestamp;
+	long timestamp;
 	int count;
 
-	public Hit(String id, Date timestamp, int count) {
+	public Hit(String id, long timestamp, int count) {
 		super();
 		this.id = id;
 		this.timestamp = timestamp;
 		this.count = count;
 	}
 
-	public Date getTimestamp() {
+	public long getTimestamp() {
 		return timestamp;
 	}
 
-	public void setTimestamp(Date timestamp) {
+	public void setTimestamp(long timestamp) {
 		this.timestamp = timestamp;
 	}
 
