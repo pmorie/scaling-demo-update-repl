@@ -44,8 +44,8 @@ public class HitTracker {
 
 	@PostConstruct
 	void initialize() {
-		String host = System.getenv("MONGO_PORT_27017_TCP_ADDR");
-		int port = Integer.decode(System.getenv("MONGO_PORT_27017_TCP_PORT"));
+		String host = "127.0.0.1";
+		int port = 27017;
 		String user = null;
 		String password = null;
 		gearId = System.getenv("HOSTNAME");
