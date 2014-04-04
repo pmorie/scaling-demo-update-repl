@@ -134,8 +134,8 @@ function updateCache(data) {
   if (!application) {
     application = data;
     application.fixed = true;
-    application.x = 300;
-    application.y = 300;
+    application.x = 650;
+    application.y = 400;
     updated = true;
   }
 
