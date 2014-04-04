@@ -82,7 +82,7 @@ function merge(data) {
       return gear.children == 0;
     },
     function(hit) {
-      return (Date.now() - 1000*60*pruneTime) > new Date(hit.timestamp).getTime();
+      return (Date.now() - 1000*15*pruneTime) > new Date(hit.timestamp).getTime();
     }
   );
 
