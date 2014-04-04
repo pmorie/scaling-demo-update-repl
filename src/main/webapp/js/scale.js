@@ -352,9 +352,9 @@ function radius(d) {
  */
 function charge(d) {
     if (d.type == 'application') {
-      return 0;
+      return -10;
     } else if (d.type == 'gear') {
-      return 0;
+      return -20;
     } else if (d.type == 'hit') {
       return 0;
     }
