@@ -133,6 +133,7 @@ function updateCache(data) {
   // Update the application cache
   if (!application) {
     application = data;
+    application.fixed = true;
     updated = true;
   }
 
@@ -466,7 +467,6 @@ function pollLocal(selection) {
 *---------------------------------------------------------------------
 */
 var w = 1500, h = 900, link, root = [], application, gears = {}, hits = {};
-application.fixed = true
 
 // The time from which to start retrieving results
 var time = 0;
