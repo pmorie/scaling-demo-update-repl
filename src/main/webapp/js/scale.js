@@ -481,7 +481,7 @@ var force = d3.layout.force()
       .friction(0.9)
       .gravity(0.2)
       .charge(charge)
-      .chargeDistance(300)
+
       .size([ w, h ]);
 
 // Add the svg object to the chart

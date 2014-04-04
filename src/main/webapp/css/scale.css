@@ -16,14 +16,14 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-	background: #e3e3e3;
-	background: -moz-radial-gradient(center, circle cover, white 0%, #e3e3e3 100%);
+	background: #ffffff;
+	background: -moz-radial-gradient(center, circle cover, white 0%, #ffffff 100%);
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%,
-		color-stop(0%, white), color-stop(100%, #e3e3e3));
-	background: -webkit-radial-gradient(center, circle cover, white 0%, #e3e3e3 100%);
-	background: -o-radial-gradient(center, circle cover, white 0%, #e3e3e3 100%);
-	background: -ms-radial-gradient(center, circle cover, white 0%, #e3e3e3 100%);
-	background: radial-gradient(center, circle cover, white 0%, #e3e3e3 100%);
+		color-stop(0%, white), color-stop(100%, #ffffff));
+	background: -webkit-radial-gradient(center, circle cover, white 0%, #ffffff 100%);
+	background: -o-radial-gradient(center, circle cover, white 0%, #ffffff 100%);
+	background: -ms-radial-gradient(center, circle cover, white 0%, #ffffff 100%);
+	background: radial-gradient(center, circle cover, white 0%, #ffffff 100%);
 }
 
 .background {
@@ -32,14 +32,14 @@ body {
 	height: 100%;
 	background: url(../images/atomic.png) no-repeat fixed top;
 	-webkit-animation: bfade 4s ease;
-	opacity: 0.3;
+	opacity: 0.0;
 	z-index: -1;
 }
 
 @-webkit-keyframes bfade {
    0% {opacity: 0.0;}
    100% {
-     opacity: 0.3;
+     opacity: 0.0;
      background:url(../images/atomic.png) no-repeat fixed top;
    }
 }
