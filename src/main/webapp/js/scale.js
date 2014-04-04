@@ -313,7 +313,7 @@ function linkStrength(d) {
   if (d.target.type == 'gear') {
     return 0.9;
   } else if (d.target.type == 'hit') {
-    return 0.9;
+    return 1.1;
   }
 }
 
@@ -356,7 +356,7 @@ function charge(d) {
     } else if (d.type == 'gear') {
       return -250;
     } else if (d.type == 'hit') {
-      return -100;
+      return -300;
     }
 }
 
