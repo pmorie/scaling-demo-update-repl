@@ -331,9 +331,9 @@ function radius(d) {
     // If collapsed, show total size
     return Math.log(d.size) * 10;
   } else if (d.type == 'application') {
-      return 65;
+      return 105;
     } else if (d.type == 'gear') {
-      return 20;
+      return 40;
     } else if (d.type == 'hit'){
       var result = Math.log(d.size);
       if (result == 0) result = 1;
