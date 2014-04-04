@@ -30,7 +30,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: url(../images/supershifter.png) no-repeat fixed top;
+	background: url(../images/atomic.png) no-repeat fixed top;
 	-webkit-animation: bfade 4s ease;
 	opacity: 0.3;
 	z-index: -1;
@@ -40,7 +40,7 @@ body {
    0% {opacity: 0.0;}
    100% {
      opacity: 0.3;
-     background:url(../images/supershifter.png) no-repeat fixed top;
+     background:url(../images/atomic.png) no-repeat fixed top;
    }
 }
 
