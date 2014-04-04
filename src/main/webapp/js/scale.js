@@ -214,7 +214,7 @@ function update() {
       .append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
-        .text(function(d) { return d.type == "application" ? "App": "Gear" });
+        .text(function(d) { return d.type == "application" ? "JBoss EWS": "JBoss EAP" });
 
     // Exit any old nodes
     groups.exit().transition()
