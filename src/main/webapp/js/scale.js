@@ -282,9 +282,9 @@ function color(d) {
   } else if (d._children) {
     return "#3182bd";
   } else if (d.type == 'application') {
-    return "#acacac";
+    return "#6C98F8";
   } else if (d.type == 'gear') {
-    return "#c6dbef";
+    return "#F8CC6C";
   }
 }
 
