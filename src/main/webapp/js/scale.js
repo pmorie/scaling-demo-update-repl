@@ -214,7 +214,7 @@ function update() {
       .append("text")
         .attr("dy", ".3em")
         .style("text-anchor", "middle")
-        .text(function(d) { return d.type == "application" ? "JBoss EWS": "JBoss EAP" });
+        .text(function(d) { return d.type == "application" ? "Load Balancer": "EAP" });
 
     // Exit any old nodes
     groups.exit().transition()
@@ -331,7 +331,7 @@ function radius(d) {
     // If collapsed, show total size
     return Math.log(d.size) * 10;
   } else if (d.type == 'application') {
-      return 40;
+      return 50;
     } else if (d.type == 'gear') {
       return 20;
     } else if (d.type == 'hit'){
@@ -352,11 +352,11 @@ function radius(d) {
  */
 function charge(d) {
     if (d.type == 'application') {
-      return -10;
+      return 0;
     } else if (d.type == 'gear') {
-      return -25;
+      return 0;
     } else if (d.type == 'hit') {
-      return -25;
+      return 0;
     }
 }
 
