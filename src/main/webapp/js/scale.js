@@ -468,7 +468,7 @@ function pollLocal(selection) {
 *------------------------- MAIN PROGRAM ------------------------------
 *---------------------------------------------------------------------
 */
-var w = 900, h = 500, link, root = [], application, gears = {}, hits = {};
+var w = 900, h = 700, link, root = [], application, gears = {}, hits = {};
 
 // The time from which to start retrieving results
 var time = 0;
