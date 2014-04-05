@@ -340,7 +340,7 @@ function radius(d) {
     } else if (d.type == 'hit'){
       var result = Math.log(d.size);
       if (result == 0) result = 1;
-      return result * 2;
+      return result * 1.2;
     }
 }
 
@@ -355,7 +355,7 @@ function radius(d) {
  */
 function charge(d) {
     if (d.type == 'application') {
-      return -10;
+      return -100;
     } else if (d.type == 'gear') {
       return -250;
     } else if (d.type == 'hit') {
