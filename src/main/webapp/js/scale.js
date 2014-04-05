@@ -314,7 +314,7 @@ function linkDistance(d) {
  */
 function linkStrength(d) {
   if (d.target.type == 'gear') {
-    return 0.9;
+    return 2;
   } else if (d.target.type == 'hit') {
     return 1.1;
   }
