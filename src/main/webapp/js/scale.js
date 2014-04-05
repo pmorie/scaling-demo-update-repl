@@ -334,13 +334,13 @@ function radius(d) {
     // If collapsed, show total size
     return Math.log(d.size) * 10;
   } else if (d.type == 'application') {
-      return 105;
+      return 61;
     } else if (d.type == 'gear') {
-      return 40;
+      return 30;
     } else if (d.type == 'hit'){
       var result = Math.log(d.size);
       if (result == 0) result = 1;
-      return result;
+      return result * 2;
     }
 }
 
@@ -468,7 +468,7 @@ function pollLocal(selection) {
 *------------------------- MAIN PROGRAM ------------------------------
 *---------------------------------------------------------------------
 */
-var w = 1500, h = 900, link, root = [], application, gears = {}, hits = {};
+var w = 900, h = 500, link, root = [], application, gears = {}, hits = {};
 
 // The time from which to start retrieving results
 var time = 0;
