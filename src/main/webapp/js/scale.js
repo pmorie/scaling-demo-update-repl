@@ -359,7 +359,7 @@ function charge(d) {
     } else if (d.type == 'gear') {
       return -250;
     } else if (d.type == 'hit') {
-      return -300;
+      return -500;
     }
 }
 
