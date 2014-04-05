@@ -298,7 +298,7 @@ function color(d) {
  */
 function linkDistance(d) {
   if (d.target.type == 'gear') {
-    return 450;
+    return 350;
   } else if (d.target.type == 'hit') {
     return 50;
   }
