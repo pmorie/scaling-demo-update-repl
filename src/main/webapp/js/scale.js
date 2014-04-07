@@ -281,13 +281,13 @@ function key(d) {
  */
 function color(d) {
   if (d.type == 'hit') {
-    return "#fd8d3c";
+    return "#3dad00";
   } else if (d._children) {
     return "#3182bd";
   } else if (d.type == 'application') {
-    return "#6C98F8";
+    return "#cccccc";
   } else if (d.type == 'gear') {
-    return "#F8CC6C";
+    return "#97e776";
   }
 }
 
