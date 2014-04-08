@@ -88,7 +88,7 @@ line.link {
 text {
 	font-family: "League Gothic Webfont", sans-serif;
 	font-weight: bold;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .application + text {
