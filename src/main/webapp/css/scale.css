@@ -102,6 +102,7 @@ text:hover {
 
 #chart {
 	text-align: center;
+	clear: left;
 }
 
 code {
