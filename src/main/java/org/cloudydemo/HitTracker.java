@@ -2,6 +2,8 @@ package org.cloudydemo;
 
 import java.net.UnknownHostException;
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
@@ -21,6 +23,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.ServerAddress;
 
 @Startup
 @Singleton
@@ -44,17 +47,22 @@ public class HitTracker {
 
 	@PostConstruct
 	void initialize() {
-		String host = "127.0.0.1";
-		int port = 27017;
 		String user = null;
 		String password = null;
 		gearId = System.getenv("HOSTNAME");
 		appName = "scaling-demo";
 
-		LOGGER.fine("Connecting with host = " + host + " / port = " + port);
 
 		try {
-			mongo = new Mongo(host, port);
+			List addrs = new ArrayList();
+ 			addrs.add( new ServerAddress("127.0.0.1" , 27017));
+ 			addrs.add( new ServerAddress("127.0.0.1" , 27018));
+ 			addrs.add( new ServerAddress("127.0.0.1" , 27019));
+ 			addrs.add( new ServerAddress("127.0.0.1" , 27020));
+
+ 			LOGGER.fine("Connecting with " + addrs.toString());
+ 			
+			mongo = new Mongo(addrs);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
