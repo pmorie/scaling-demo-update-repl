@@ -81,7 +81,7 @@ public class HitTracker {
 
     @Lock(LockType.READ)
 	public Application displayHitsSince(long time) {
-		LOGGER.fine("Displaying hits");
+		LOGGER.warning("Displaying hits since " + time);
 
 		Application app = new Application(appName);
 
@@ -92,6 +92,7 @@ public class HitTracker {
 			BasicDBObject query = new BasicDBObject("time", new BasicDBObject(
 					"$gt", time));
 			DBCursor cur = coll.find(query);
+			LOGGER.warning("Result set count: " + cur.count());
 
 			try {
 				while (cur.hasNext()) {
@@ -138,7 +139,7 @@ public class HitTracker {
 	@Schedule(hour = "*", minute = "*", second = "*/2", persistent = false)
 	public void persist() {
 		if (hits > 0) {
-			LOGGER.info("Persisting " + hits + " to Mongo for gear " + gearId);
+			LOGGER.warning("Persisting " + hits + " to Mongo for gear " + gearId);
 
 			try {
 				mongoDB.requestStart();
@@ -154,7 +155,7 @@ public class HitTracker {
 				
 				// Reset the hit counter
 				hits = 0;
-				LOGGER.info("Success");
+				LOGGER.warning("Success");
 			} finally {
 				mongoDB.requestDone();
 			}
