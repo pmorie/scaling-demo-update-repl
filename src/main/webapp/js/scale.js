@@ -453,7 +453,7 @@ function poll() {
         },
         dataType : "json"
     });
-    }, 1000);
+    }, 2500);
 }
 
 function pollLocal(selection) {
