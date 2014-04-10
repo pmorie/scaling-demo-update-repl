@@ -63,6 +63,7 @@ public class HitTracker {
  			LOGGER.fine("Connecting with " + addrs.toString());
  			
 			mongo = new Mongo(addrs);
+			mongo.slaveOk();
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
