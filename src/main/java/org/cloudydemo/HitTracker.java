@@ -49,12 +49,12 @@ public class HitTracker {
 
 	@PostConstruct
 	void initialize() {
-		String user = null;
-		String password = null;
 		gearId = System.getenv("HOSTNAME");
 		appName = "scaling-demo";
 
 
+		String user = null;
+		String password = null;
 		try {
 			List addrs = new ArrayList();
  			// addrs.add( new ServerAddress("192.168.1.1" , 27017));
@@ -122,7 +122,9 @@ public class HitTracker {
 			}
 		} catch (Exception e) {
 			// Try and re-establish the Mongo connection
-			initialize();
+			// initialize();
+
+			throw new RuntimeException(e);
 		} finally {
 			mongoDB.requestDone();
 		}
