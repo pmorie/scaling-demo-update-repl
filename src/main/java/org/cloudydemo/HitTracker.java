@@ -57,15 +57,15 @@ public class HitTracker {
 
 		try {
 			List addrs = new ArrayList();
- 			addrs.add( new ServerAddress("192.168.1.1" , 27017));
+ 			// addrs.add( new ServerAddress("192.168.1.1" , 27017));
  			addrs.add( new ServerAddress("192.168.1.2" , 27017));
- 			addrs.add( new ServerAddress("192.168.1.3" , 27017));
- 			addrs.add( new ServerAddress("192.168.1.4" , 27018));
+ 			// addrs.add( new ServerAddress("192.168.1.3" , 27017));
+ 			// addrs.add( new ServerAddress("192.168.1.4" , 27018));
 
  			LOGGER.fine("Connecting with " + addrs.toString());
  			
 			mongo = new Mongo(addrs);
-			mongo.slaveOk();
+			// mongo.slaveOk();
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
