@@ -285,9 +285,9 @@ function color(d) {
   } else if (d._children) {
     return "#3182bd";
   } else if (d.type == 'application') {
-    return "#cccccc";
-  } else if (d.type == 'gear') {
     return "#97e776";
+  } else if (d.type == 'gear') {
+    return "#cccccc";
   }
 }
 
