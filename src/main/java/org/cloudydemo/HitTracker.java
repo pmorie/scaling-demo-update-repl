@@ -11,6 +11,8 @@ import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.ejb.Timeout;
+import javax.ejb.Lock;
+import javax.ejb.LockType;
 
 import org.bson.types.ObjectId;
 import org.cloudydemo.model.Application;
@@ -77,6 +79,7 @@ public class HitTracker {
 		}
 	}
 
+    @Lock(LockType.READ)
 	public Application displayHitsSince(long time) {
 		LOGGER.fine("Displaying hits");
 
@@ -131,10 +134,11 @@ public class HitTracker {
 	/*
 	 * Persist using the Timer service every second
 	 */
+	@Lock(LockType.WRITE)
 	@Schedule(hour = "*", minute = "*", second = "*/2", persistent = false)
 	public void persist() {
 		if (hits > 0) {
-			LOGGER.fine("Persisting " + hits + " to Mongo for gear " + gearId);
+			LOGGER.info("Persisting " + hits + " to Mongo for gear " + gearId);
 
 			try {
 				mongoDB.requestStart();
@@ -150,6 +154,7 @@ public class HitTracker {
 				
 				// Reset the hit counter
 				hits = 0;
+				LOGGER.info("Success");
 			} finally {
 				mongoDB.requestDone();
 			}
@@ -162,6 +167,7 @@ public class HitTracker {
 		// which can be ignored.
 	}
 
+	@Lock(LockType.WRITE)
 	public void addHit() {
 		hits++;
 	}
